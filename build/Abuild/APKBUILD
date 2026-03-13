@@ -1,7 +1,7 @@
 # Maintainer: Leo Shen <yishen@qnx.com>
 pkgname=busybox
 pkgver=1.36.1
-pkgrel=9
+pkgrel=${pkgrel:-0}
 arch="all"
 pkgdesc="Size optimized toolbox of many common UNIX utilities"
 url="https://www.busybox.net"
@@ -45,6 +45,7 @@ utils() {
     done
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 8c0c754c9ae04b5e6b23596283a7d3a4ef96225fe179f92d6f6a99c69c0caa95b1aa56c267f52d7c807f6cc69e1f0b7dd29a8ac624098f601738f8c0c57980d4  busybox-1.36.1.tar.bz2
 46eb409a42ae1d90ed7f513224d8611a8266671f3bf48d15347171afb1667ebb19d0ec2e0965775ee2bb4ccda2817d1b611839ae5b6241a264db4032d4b8f8ba  config
